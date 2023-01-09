@@ -1,0 +1,98 @@
+# Answers to the Jun 2018 QP for CS paper 2
+# https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Past-Papers/AQA/Paper-2/June%202018%20QP%20-%20Paper%202%20AQA%20Computer%20Science%20A-level.PDF
+1.1)
+Option 2
+1.2)
+0.0001011 = 11/128
+1.3)
+-608
+1011010000
+-1024
+-768
+-608
+Mantissa: 1011010
+Exponent: 00011
+2.1)
+A vector graphic is represented in data as a set of objects. This includes details of that object including it's vetice coordinates, fill-colour, and border colour. This is in contrast to bitmapped images which simply store the colour information for each pixel. A benefit of vector graphics is it's infinite scalable resolution. In Figure 1, the black rectangle could be represented using four coordinates for each corner, bblack for it's line colour and also black for it's fill colour.
+2.2)
+Min storage = height * width * bitdepth = (50 * 50 * 2)/8 = 625 bytes
+2.3)
+The row of pixels in figure 3 could be compressed using RLE. This takes any continous strings of repeated data and compresses them into a shortened representation. For example in Figure 3 it could take the first 7 yellow pixels and represent them as 7Y instead of YYYYYYY. The entire string could be stored as 7Y4B9Y as an RLE compression.
+2.4)
+This is as Figure 4 contains a realistic nature environment which RLE would struggle to compress due to repeated continous strings of the same value being unlikely in real-world photos. On the other hand Figure 2 is a simple digital graphic which doe shave several repeated values. Making compression effective.
+3.1)
+D = B XOR C
+E = B AND C
+F = A AND D
+G = F OR E
+H = A XOR D
+Truth table:
+0|0|0|0|0
+1|0|0|0|1
+0|1|0|1|0
+0|1|0|1|1
+3.2)
+G = F OR E = (A.(B(+)C))+(B.C)
+3.3)
+The purpose is to convert the number of 1's in the base inputs into binary.
+4)
+The issues with the server response times could be solved using an improvement to the hardware of the server. An increase in speed could be found in increasing the number of cores in the processor, or the clockspeed of those cores. This is as it will allow for multiple processes to be executed simultanously or to complete more operations in a shorter period. Alternatively using more RAM storage could allow more data to be accessed at once. Thirdly swapping any HDDs for SSDs could be a benefit as their data can be accessed non-sequentially whereas a disk drive cannot; therefore hopefully allowing data to be accessed faster without a read-header having to move to the data location. 
+
+Moving onto networking, using a wired network instead of a wireless one wherever possible will improve the latency and relliability of the server connections. In addition the wired network could adopt a star topology instead of a bus. This will allow for the latency to each client to be reduced and avoids network interference. Thirdly using network cards with the highest bitrate possible will help ensure the most amount of data can be transfered in a given amount of time.
+
+Finally regarding the database itself and it's software, using an index system to allow frequently accessed records to be quickly accessed and reduce wait time. Alternatively a caching system would achieve a similar improvemnet. Another area where software could be improved is in the complexity of the algorithm used for record searches. For example changing a linear search to a binary would effectively reduce the time taken from O(n) to O(logn) on average which would become especially useful the larger the database gets. Finally, the database itself could be split across several servers to split the load and storage responsibilities between mutliple hosts. 
+5.1)
+11111111111111111111111111100000
+5.2)
+5 bits = 2^5 = 32 devices at once
+5.3)
+DHCP is the Dynamic Host Configuration Protocol. This allows for the router of the network to assign subnet IP addresses to connected devices from a pool of avaliable ones. This is done as, for example with this network, only 32 unique addresses are avaliable. Therefore addresses need to be re-distributed once a device disconnects and brought back into the avaliable pool of addresses for the next client. If this wasn't reassigned it would mean after 32 devices had ever been connected, the network would be unable to connect any more, even if those 32 weren't actively communicating. During this communication, the client sends a DHCPDiscover request for an IP address to the router/host. It will respond with a DHCPOffer of an IP address based on the pool of avaliable addresses. The client will then send back a DHCPRequest with it's IP selection. Finally the Host will return a DHCPAck acknowledging the address and removing it from the pool of free ones.
+5.4)
+NAT or Network Address Translation means that the external router can take the private IP address of the companys web server's packets and attach a new public IP address which can be accessed via the greater internet. This pair of private and public IP is remebered and stored by the router so that if/when a response packet is sent to that public IP, the router can translate the adress back to the private IP and forward it to the local web server to be recieved.
+6.1)
+An optical disk drive reads data on CS/DVDs by using an internal laser. This laser can detect the distance through the time it takes for the light to be reflected back. The data on these storage mediums is via pits and lands, these are tiny engravings into the surface of the disk. A land can represent a 1 in data and a pit represents a 0. These are arranged in a constant linear track which allows the laser to read the disk entirely as a motor spins the disk at a constant velocity to allow all areas to be read. If the time for the light to reflect back is longer it can be read as a pit and therefore a 0. If the time is shorter it's a land and it's recorded as a 1. All this binary data is collected to create the final data output. 
+6.2)
+USB ports are widely adopted on many devices whereas disk drives are larger and less common. 
+7.1)
+---< = one-to-many
+---- = one-to-one
+EventType ---< EventAtFixtue
+Fixture ---< EventAtFixture
+EventType ---< EventEntry 
+7.2)
+Error 1: No datatype for primary key
+Error 2: No semi-colon at the end
+7.3)
+Reason 1: Minimise data duplication
+Reason 2: Eliminate update anomalies
+7.4)
+SELECT Surname, Forename, DateOfBirth
+FROM Athlete, Fixture, EventEntry
+WHERE FixtureDate = "17/09/2018" AND EventEntry.AthleteID = Athlete.AthleteID AND EventEntry.FixtureID = Fixture.FixtureID
+ORDER BY Surname;
+8)
+Legislators face challenges in the digital age due to the distribution of copyrighted and other illegal material via peer-to-peer sharing protocols like bit-torrent. These are especially difficult to regulate and take-down as their technology rellied on a decentralised system with no central host server. Additionally technology is continously evolving so there's constant new threats and avenues to comit crimes. This includes issues created by the international connectivity of the internet which mean a criminal can comit a crime from another country. Secure encryption and data transfer make it very difficult to intercept communications by criminals. This is a fine line for legislators as creating solutions like back-doors for intelligence agencies causes ppublic security and privacy issues.
+9.1)
+15/23 = Rational, Real
+108 = Natural, Integer, Rational, Real
+9.2)
+An ordinal number is a positional number which shows an order relation to other values. In this context it's used as the index of this array to determine the position of the contents.
+10)
+(A+B).(B+C.(D+notD)) 
+(A+B).(B+C.1) --> Inverse Law
+(A+B).(B+C) --> Identity Law
+B+A.C --> Distributive Law
+11.1)
+sqrt(16)
+2^4 = 16
+4 bit sample resolution
+11.2)
+10 * 100 = 1000
+1000hz sample rate 
+11.3)
+As the resolution doesn't allow the exact same amplitude as the original sound to be stored, it rounds it to the nearest value. This means the saved data sample will be slightly different to the original. This can be mitigated by increasing the sample resolution. 
+11.4)
+1200hz * 2
+2400hz sample rate
+12)
+
